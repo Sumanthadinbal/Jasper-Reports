@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inventoty" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" resourceBundle="gnd" uuid="37f3f98d-33b8-446e-bcfe-52ce6bac5d08">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="user" class="java.lang.String"/>
+	<field name="s" class="com.example.entity.Detail"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="contact" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="802" height="37" uuid="9058fc30-7a37-48f6-8030-e81b4860e66d"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inventory Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<elementGroup/>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="214" y="21" width="144" height="25" isRemoveLineWhenBlank="true" uuid="9146c3b0-f01e-4ed7-adf2-1847813d2893">
+					<printWhenExpression><![CDATA[$P{user}.equals("internal")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{idd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="358" y="21" width="119" height="25" uuid="cdf42000-6c09-4399-ab6d-2dc4f5b15580"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{namee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="477" y="21" width="112" height="25" uuid="3b2a1aec-1eb6-459d-9f11-cf9419caea86"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{contactt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<elementGroup>
+				<textField>
+					<reportElement x="214" y="3" width="144" height="25" uuid="cc4aed7f-ee1a-4537-a34f-358f86b664c6">
+						<printWhenExpression><![CDATA[$P{user}.equals("internal")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{s}.getId()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="358" y="3" width="119" height="25" uuid="3bb3c6c4-da1f-4f67-9e82-edcf641036bf"/>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="477" y="3" width="112" height="25" uuid="46653c97-579f-4025-ba82-a72ed3b9cb8c"/>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{contact}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f7e756f7-2b73-49e8-a67d-b4cb51a7c791">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="location" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="40" width="802" height="30" uuid="b564d422-826f-49ee-9af1-ef4fac678a6a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Inventory Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="30" width="100" height="30" uuid="d19909a0-d816-43b5-a8dd-fc565e93b527"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="292" splitType="Stretch">
+			<textField>
+				<reportElement x="50" y="0" width="100" height="30" uuid="55724225-3043-4dac-b161-ad984c528bf3"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="190" y="0" width="100" height="30" uuid="cd8280f8-018c-4391-960c-2a012c3fb011"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="30" y="60" width="170" height="80" uuid="590ecfd0-e634-4b9f-99ca-928a1bcca4ea"/>
+				<subreportExpression><![CDATA["Blank_A4_Landscape_1.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="280" y="50" width="160" height="90" uuid="ce6986d9-6d70-4f70-8aaf-a7837206e117"/>
+				<subreportExpression><![CDATA["Blank_A4.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="199" y="212" width="100" height="30" uuid="91aea3dc-48f7-4655-a4f3-d131233ca246"/>
+				<text><![CDATA[below sub reports]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
